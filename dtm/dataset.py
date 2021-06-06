@@ -9,12 +9,9 @@ import pandas as pd
 import sklearn
 
 class Dataset:
-    
-    def __init__(self, path_to_file = 'C:\\D Drive\\Data Science\\MLOps\\Data-Science-feature-decision_tree_model\\data\\diabetes.csv'):
-        self.data_dir = Path(path_to_file)
         
-    def get_data(self):
-        data = pd.read_csv(self.data_dir)
+    def get_data(self, path_to_file = 'C:\\D Drive\\Data Science\\MLOps\\Data-Science-feature-decision_tree_model\\dtm\\data\\diabetes.csv'):
+        data = pd.read_csv(path_to_file)
         X = data.drop('Outcome',axis=1)
         Y = data['Outcome']
         from sklearn.model_selection import train_test_split
